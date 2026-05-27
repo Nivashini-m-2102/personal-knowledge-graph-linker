@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NeuroMap AI Dashboard</title>
+
+  <!-- VIS GRAPH -->
+  <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+  <!-- TOP BAR -->
+  <div class="top-bar glass-panel">
+    <h2>🧠 NeuroMap AI</h2>
+
+    <div class="search-bar">
+      <input id="searchBox" placeholder="Search concept...">
+    </div>
+
+    <div class="profile-icon" onclick="window.location.href='profile.html'">U</div>
+  </div>
+
+  <!-- GRAPH AREA -->
+  <div class="main-graph-area">
+    <div id="graph-container" style="height:600px;"></div>
+  </div>
+
+  <!-- RIGHT SIDEBAR -->
+  <div class="right-sidebar">
+
+    <div class="glass-panel path-container">
+      <h3>📘 Semantic Learning Path</h3>
+      <p style="margin-bottom: 10px; color: #94A3B8; font-size: 13px;">Follows an AI tutor order through core topics, supporting topics, and contextual concepts.</p>
+      <div id="learningPath"></div>
+    </div>
+
+    <div class="glass-panel">
+      <h3>📊 Progress</h3>
+      <div id="progressBar" style="background:#222;height:10px;border-radius:10px;">
+        <div id="progressFill" style="height:10px;background:#3B82F6;width:0%;border-radius:10px;"></div>
+      </div>
+      <p id="progressText">0%</p>
+    </div>
+
+    <div class="glass-panel">
+      <h3>🧠 Concept Info</h3>
+      <div id="nodeInfo">Click a node</div>
+    </div>
+
+    <div class="glass-panel">
+      <h3>🧩 Graph Legend</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div><span style="display:inline-block;width:12px;height:12px;background:#0EA5E9;border-radius:50%;margin-right:8px;"></span>OS</div>
+        <div><span style="display:inline-block;width:12px;height:12px;background:#8B5CF6;border-radius:50%;margin-right:8px;"></span>ML</div>
+        <div><span style="display:inline-block;width:12px;height:12px;background:#F59E0B;border-radius:50%;margin-right:8px;"></span>DBMS</div>
+        <div><span style="display:inline-block;width:12px;height:12px;background:#14B8A6;border-radius:50%;margin-right:8px;"></span>Networking</div>
+      </div>
+    </div>
+
+    <div class="glass-panel">
+      <h3>✨ Recommendations</h3>
+      <div id="recommendations">Coming soon...</div>
+    </div>
+
+    <!-- CHAT -->
+    <div class="glass-panel chat-container">
+      <h3>🤖 AI Assistant</h3>
+
+      <div id="chatBox" class="chat-messages"></div>
+
+      <div class="chat-input-area">
+        <input id="question" placeholder="Ask anything..."
+          onkeypress="if(event.key==='Enter') askAI()">
+        <button onclick="askAI()">Send</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<div class="glass-panel">
+  <div class="dashboard-actions">
+    <button class="glass-btn" onclick="showQuiz()">Generate Quiz</button>
+    <button onclick="generateNotesPDF()" class="glass-btn">
+  📄 Generate Notes PDF
+</button>
+    <button class="glass-btn" onclick="showRecommendations()">Refresh Recommendations</button>
+  </div>
+</div>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

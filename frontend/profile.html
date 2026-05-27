@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroMap AI - Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="top-bar glass-panel" style="margin: 20px; border-radius: 12px;">
+        <h2 style="font-size: 18px; color: #fff; cursor: pointer;" onclick="window.location.href='dashboard.html'">← Back to Dashboard</h2>
+    </div>
+
+    <div class="upload-container glass-panel" style="max-width: 600px;">
+        <div class="profile-icon" style="width: 80px; height: 80px; font-size: 32px; margin: 0 auto 20px;" id="profile-initial">U</div>
+        <h1 id="profile-name">User Name</h1>
+        <p id="profile-email" style="color: #94A3B8; margin-bottom: 30px;">user@email.com</p>
+        
+        <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 40px;">
+            <div class="glass-panel" style="padding: 20px; flex: 1;">
+                <h2 style="color: var(--primary-color);" id="streak-count">0</h2>
+                <p style="color: #94A3B8; font-size: 14px;">Day Streak 🔥</p>
+            </div>
+            <div class="glass-panel" style="padding: 20px; flex: 1;">
+                <h2 style="color: var(--secondary-color);" id="concept-count">0</h2>
+                <p style="color: #94A3B8; font-size: 14px;">Concepts Learned 🧠</p>
+            </div>
+        </div>
+
+        <button id="logout-btn" class="glass-btn" style="background: rgba(239, 68, 68, 0.2); color: #EF4444; width: 100%;">Logout</button>
+    </div>
+
+    <script src="js/profile.js"></script>
+</body>
+</html>

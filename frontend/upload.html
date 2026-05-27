@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroMap AI - Upload Knowledge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="top-bar glass-panel" style="margin: 20px; border-radius: 12px;">
+        <h2 style="font-size: 18px; color: #fff;">NeuroMap AI</h2>
+        <div class="profile-icon" onclick="window.location.href='profile.html'">U</div>
+    </div>
+
+    <div class="upload-container glass-panel">
+        <h1 style="margin-bottom: 10px;">Upload Your Knowledge</h1>
+        <p style="color: #94A3B8; margin-bottom: 30px;">Upload PDFs, text files, or folders. Our agent will analyze and construct your knowledge graph.</p>
+        
+        <div class="upload-zone" id="drop-zone">
+            <div class="upload-icon">📁</div>
+            <h3>Drag & Drop Files Here</h3>
+            <p style="color: #94A3B8; margin-top: 10px;">or click to browse</p>
+            <input type="file" id="file-input" multiple webkitdirectory directory class="hidden">
+        </div>
+        
+        <div id="file-list"></div>
+        
+        <button id="upload-btn" class="glass-btn hidden" style="width: 200px;">Analyze & Build Graph</button>
+    </div>
+
+    <div id="loading-overlay" class="hidden">
+        <div class="spinner"></div>
+        <h2 style="color: white; margin-bottom: 10px;">AI Agents are working...</h2>
+        <p style="color: #94A3B8;" id="loading-text">Extracting concepts...</p>
+    </div>
+
+    <script src="js/upload.js"></script>
+</body>
+</html>
